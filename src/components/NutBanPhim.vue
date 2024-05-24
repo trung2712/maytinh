@@ -1,11 +1,12 @@
 <script >export default {
   name: 'NutBanPhim',
   props: {
-    Nut: String
+    Nut: String,
+    tennut : String
   },
   methods: {
     hienthi() {
-      this.$emit('nutClicked', this.Nut);
+      this.$emit('hienthi', this.Nut);
     }
   }
 }

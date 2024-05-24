@@ -11,9 +11,32 @@ export default {
     ten: String
   },
 
+
 data() {
     return {
-      displayValue: ''
+      displayValue: '',
+      danhSachButton: [
+        {tennut : "7"},
+        {tennut : "8"},
+        {tennut : "9"},
+        {tennut : "DEL"},
+        {tennut : "ALC"},
+        {tennut : "4"},
+        {tennut : "5"},
+        {tennut : "6"},
+        {tennut : "*"},
+        {tennut : "/"},
+        {tennut : "1"},
+        {tennut : "2"},
+        {tennut : "3"},
+        {tennut : "+"},
+        {tennut : "-"},
+        {tennut : "0"},
+        {tennut : "("},
+        {tennut : ")"},
+        {tennut : "."},
+        {tennut : "="},
+      ]
     }
   },
   methods: {
@@ -60,57 +83,37 @@ data() {
     <div  class="calculator">
       <h3 id="one"> CASINO</h3>
       <h3 id="two"> FX580</h3>
-      <input type="" class="display" v-model="displayValue">
+      <input type=" " class="display" v-model="displayValue">
       <div class="button-operation">
 
+        <NutBanPhim v-for="(button, index) in danhSachButton"
+                    :key="index"
+                    @hienthi="handleButtonClick"
+                    :Nut="button.tennut"
 
-        <NutBanPhim Nut= "7" @nutClicked="handleButtonClick" ></NutBanPhim>
-        <NutBanPhim Nut= "8" @nutClicked="handleButtonClick"></NutBanPhim>
-        <NutBanPhim Nut= "9" @nutClicked="handleButtonClick"></NutBanPhim>
-        <NutBanPhim Nut= "DEL" @nutClicked="handleButtonClick"></NutBanPhim>
-        <NutBanPhim Nut= "ALC" @nutClicked="handleButtonClick"></NutBanPhim>
-        <NutBanPhim Nut= "4" @nutClicked="handleButtonClick">  </NutBanPhim>
-        <NutBanPhim Nut= "5" @nutClicked="handleButtonClick"></NutBanPhim>
-        <NutBanPhim Nut= "6" @nutClicked="handleButtonClick"></NutBanPhim>
-        <NutBanPhim Nut= "*" @nutClicked="handleButtonClick"></NutBanPhim>
-        <NutBanPhim Nut= "/" @nutClicked="handleButtonClick"></NutBanPhim>
-        <NutBanPhim Nut= "1" @nutClicked="handleButtonClick"></NutBanPhim>
-        <NutBanPhim Nut= "2" @nutClicked="handleButtonClick"></NutBanPhim>
-        <NutBanPhim Nut= "3" @nutClicked="handleButtonClick"></NutBanPhim>
-        <NutBanPhim Nut= "+" @nutClicked="handleButtonClick"></NutBanPhim>
-        <NutBanPhim Nut= "-" @nutClicked="handleButtonClick"></NutBanPhim>
-        <NutBanPhim Nut= "0" @nutClicked="handleButtonClick"></NutBanPhim>
-        <NutBanPhim Nut= "(" @nutClicked="handleButtonClick"></NutBanPhim>
-        <NutBanPhim Nut= ")" @nutClicked="handleButtonClick"></NutBanPhim>
-        <NutBanPhim Nut= "." @nutClicked="handleButtonClick"></NutBanPhim>
-        <NutBanPhim Nut= "=" @nutClicked="handleButtonClick"></NutBanPhim>
+        ></NutBanPhim>
+<!--        <NutBanPhim Nut= "7" @nutClicked="handleButtonClick" ></NutBanPhim>-->
+<!--        <NutBanPhim Nut= "8" @nutClicked="handleButtonClick"></NutBanPhim>-->
+<!--        <NutBanPhim Nut= "9" @nutClicked="handleButtonClick"></NutBanPhim>-->
+<!--        <NutBanPhim Nut= "DEL" @nutClicked="handleButtonClick"></NutBanPhim>-->
+<!--        <NutBanPhim Nut= "ALC" @nutClicked="handleButtonClick"></NutBanPhim>-->
+<!--        <NutBanPhim Nut= "4" @nutClicked="handleButtonClick">  </NutBanPhim>-->
+<!--        <NutBanPhim Nut= "5" @nutClicked="handleButtonClick"></NutBanPhim>-->
+<!--        <NutBanPhim Nut= "6" @nutClicked="handleButtonClick"></NutBanPhim>-->
+<!--        <NutBanPhim Nut= "*" @nutClicked="handleButtonClick"></NutBanPhim>-->
+<!--        <NutBanPhim Nut= "/" @nutClicked="handleButtonClick"></NutBanPhim>-->
+<!--        <NutBanPhim Nut= "1" @nutClicked="handleButtonClick"></NutBanPhim>-->
+<!--        <NutBanPhim Nut= "2" @nutClicked="handleButtonClick"></NutBanPhim>-->
+<!--        <NutBanPhim Nut= "3" @nutClicked="handleButtonClick"></NutBanPhim>-->
+<!--        <NutBanPhim Nut= "+" @nutClicked="handleButtonClick"></NutBanPhim>-->
+<!--        <NutBanPhim Nut= "-" @nutClicked="handleButtonClick"></NutBanPhim>-->
+<!--        <NutBanPhim Nut= "0" @nutClicked="handleButtonClick"></NutBanPhim>-->
+<!--        <NutBanPhim Nut= "(" @nutClicked="handleButtonClick"></NutBanPhim>-->
+<!--        <NutBanPhim Nut= ")" @nutClicked="handleButtonClick"></NutBanPhim>-->
+<!--        <NutBanPhim Nut= "." @nutClicked="handleButtonClick"></NutBanPhim>-->
+<!--        <NutBanPhim Nut= "=" @nutClicked="handleButtonClick"></NutBanPhim>-->
       </div>
-
-
-<!--        <button class="btn" @click="appendToDisplay(7)">7</button>-->
-<!--        <button class="btn" @click="appendToDisplay(8)">8</button>-->
-<!--        <button class="btn" @click="appendToDisplay(9)">9</button>-->
-<!--        <button class="btn operation" @click="deleteData()">DEL</button>-->
-<!--        <button class="btn operation" @click="resetDisplay()">ALC</button>-->
-
-<!--        <button class="btn" @click="appendToDisplay(4)">4</button>-->
-<!--        <button class="btn" @click="appendToDisplay(5)">5</button>-->
-<!--        <button class="btn" @click="appendToDisplay(6)">6</button>-->
-<!--        <button class="btn operation">*</button>-->
-<!--        <button class="btn operation">/</button>-->
-
-<!--        <button class="btn" @click="appendToDisplay(1)">1</button>-->
-<!--        <button class="btn" @click="appendToDisplay(2)">2</button>-->
-
-<!--        <button class="btn operation" >+</button>-->
-<!--        <button class="btn operation" >-</button>-->
-
-<!--        <button class="btn" @click="appendToDisplay(0)">0</button>-->
-<!--        <button class="btn operation" >.</button>-->
-<!--        <button class="btn operation" >(</button>-->
-<!--        <button class="btn operation" >)</button>-->
-<!--        <button class="btn operation">=</button>-->
-      </div>
+    </div>
 
     </div>
 
